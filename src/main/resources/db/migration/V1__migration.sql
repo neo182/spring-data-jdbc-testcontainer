@@ -1,5 +1,6 @@
-create table Customer(
-    ID integer,
-    firstname varchar(200),
-    lastname varchar(200)
+CREATE TABLE Customer(
+    id SERIAL,
+    firstname VARCHAR(200),
+    lastname VARCHAR(200),
+    PRIMARY KEY(id)
 );
