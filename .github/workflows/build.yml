@@ -1,5 +1,5 @@
 name: Java CI
-on: [push]
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,8 +10,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Build with Maven
-        run: mvn clean test
+      - name: Build with Maven Wrapper
+        run: ./mvnw test -B
       - name: Publish Test Report
         if: ${{ always() }}
         uses: scacap/action-surefire-report@v1
